@@ -76,8 +76,8 @@
         <tr>
           <th>Id</th>
           <th>Nombre</th>
-          <th>Tipo</th>
-          <th>Sabor</th>
+          <th>Telefono</th>
+          <th>Direccion</th>
         </tr>
         <?php if (isset($empleados)): ?>
           <tr>
