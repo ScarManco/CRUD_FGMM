@@ -14,18 +14,6 @@
         <span></span>
       </label>
     </div>
-    <input type="checkbox" id_producto="btn_label">
-    <ul class="menu">
-      <li>
-        <a href="#">Consulta productos<i class="bx bx-home-alt"></i></a>
-      </li>
-      <li>
-        <a href="#">Inicio<i class="bx bx-home-alt"></i></a>
-      </li>
-      <!-- Agregar más opciones de menú si es necesario -->
-    </ul>
-  </div>
-
   <div class="table-container">
     <?php
     $servername = "localhost";
@@ -79,7 +67,7 @@
 
     
       // Obtener la información de la productos seleccionada
-      $sql = "SELECT id_producto, nombre, precio, modelo FROM productos WHERE id_producto=$recuperada";
+      $sql = "SELECT id_producto, nombre, precio, modelo, color FROM productos WHERE id_producto=$recuperada";
       $result = mysqli_query($conn, $sql);
       $productos = mysqli_fetch_assoc($result);
     }
@@ -89,8 +77,9 @@
         <tr>
           <th>Id</th>
           <th>Nombre</th>
-          <th>Tipo</th>
-          <th>Sabor</th>
+          <th>Precio</th>
+          <th>Modelo</th>
+          <th>Color</th>
         </tr>
         <?php if (isset($productos)): ?>
           <tr>
