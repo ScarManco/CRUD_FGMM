@@ -17,7 +17,7 @@ $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : "";
 $horario = isset($_POST['horario']) ? $_POST['horario'] : "";
 $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : "";
 
-$sql = "INSERT INTO sucursal (nombre, direccion, horario, telefono ) VALUES ('$nombre', '$direccion', '$direccion', '$telefono')";
+$sql = "INSERT INTO sucursal (nombre, direccion, horario, telefono ) VALUES ('$nombre', '$direccion', '$horario', '$telefono')";
 
 if($_POST){
     echo "<script lenguage='JavaScript'>
