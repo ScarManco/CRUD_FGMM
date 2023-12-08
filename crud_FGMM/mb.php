@@ -49,11 +49,11 @@
       if (isset($_POST['guardar'])) {
         $nombre = $_POST['nombre'];
         $direccion = $_POST['direccion'];
-        $telefono = $_POST['te$telefono'];
+        $telefono = $_POST['telefono'];
         $encargado = $_POST['encargado'];
 
         // Actualizar la información en la base de datos
-        $sql = "UPDATE bodegas SET nombre='$nombre', direccion='$direccion', $telefono='$telefono', encargado='$encargado' WHERE id_bodega=$recuperada";
+        $sql = "UPDATE bodegas SET nombre='$nombre', direccion='$direccion', telefono='$telefono', encargado='$encargado' WHERE id_bodega=$recuperada";
         // Redireccionamiento a la pagina de consulta, justo debajo de la accion de actulizar la base de datos
         if($recuperada){
           echo "<script lenguage='JavaScript'>
