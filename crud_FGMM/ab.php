@@ -17,13 +17,13 @@ $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : "";
 $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : "";
 $encargado = isset($_POST['encargado']) ? $_POST['encargado'] : "";
 
-$sql = "INSERT INTO frutas (nombre, direccion, telefono, encargado ) VALUES ('$nombre', '$direccion', '$direccion', '$encargado')";
+$sql = "INSERT INTO bodegas (nombre, direccion, telefono, encargado ) VALUES ('$nombre', '$direccion', '$direccion', '$encargado')";
 
 if($_POST){
     echo "<script lenguage='JavaScript'>
     alert(''Los datos son correctos);
     ";
-    header("Location: mb.php"); // Redirigir a la página de inicio después de iniciar sesión
+    header("Location: consultab.php"); // Redirigir a la página de inicio después de iniciar sesión
 }else{
     echo "<script lenguage='JavaScript'>
     alert(''Los datos son incorrectos);
