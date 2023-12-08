@@ -17,7 +17,7 @@
     <input type="checkbox" id_producto="btn_label">
     <ul class="menu">
       <li>
-        <a href="#">Consulta prodyctos<i class="bx bx-home-alt"></i></a>
+        <a href="#">Consulta productos<i class="bx bx-home-alt"></i></a>
       </li>
       <li>
         <a href="#">Inicio<i class="bx bx-home-alt"></i></a>
@@ -78,10 +78,10 @@
 
 
     
-      // Obtener la información de la prodyctos seleccionada
-      $sql = "SELECT id_producto, nombre, precio, modelo FROM prodyctos WHERE id_producto=$recuperada";
+      // Obtener la información de la productos seleccionada
+      $sql = "SELECT id_producto, nombre, precio, modelo FROM productos WHERE id_producto=$recuperada";
       $result = mysqli_query($conn, $sql);
-      $prodyctos = mysqli_fetch_assoc($result);
+      $productos = mysqli_fetch_assoc($result);
     }
     ?>
     <form method="post">
@@ -92,13 +92,13 @@
           <th>Tipo</th>
           <th>Sabor</th>
         </tr>
-        <?php if (isset($prodyctos)): ?>
+        <?php if (isset($productos)): ?>
           <tr>
-            <td><?php echo $prodyctos["id_producto"]; ?></td>
-            <td><input type="text" name="nombre" value="<?php echo $prodyctos["nombre"]; ?>"></td>
-            <td><input type="text" name="precio" value="<?php echo $prodyctos["precio"]; ?>"></td>
-            <td><input type="text" name="modelo" value="<?php echo $prodyctos["modelo"]; ?>"></td>
-            <td><input type="text" name="color" value="<?php echo $prodyctos["color"]; ?>"></td>
+            <td><?php echo $productos["id_producto"]; ?></td>
+            <td><input type="text" name="nombre" value="<?php echo $productos["nombre"]; ?>"></td>
+            <td><input type="text" name="precio" value="<?php echo $productos["precio"]; ?>"></td>
+            <td><input type="text" name="modelo" value="<?php echo $productos["modelo"]; ?>"></td>
+            <td><input type="text" name="color" value="<?php echo $productos["color"]; ?>"></td>
           </tr>
         <?php endif; ?>
       </table>
@@ -113,4 +113,4 @@
   mysqli_close($conn);
   ?>
 </body>
-</html>  
+</html>
