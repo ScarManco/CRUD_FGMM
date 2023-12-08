@@ -17,13 +17,13 @@ $precio = isset($_POST['precio']) ? $_POST['precio'] : "";
 $modelo = isset($_POST['modelo']) ? $_POST['modelo'] : "";
 $color = isset($_POST['color']) ? $_POST['color'] : "";
 
-$sql = "INSERT INTO frutas (nombre, precio, modelo, color ) VALUES ('$nombre', '$precio', '$precio', '$color')";
+$sql = "INSERT INTO productos (nombre, precio, modelo, color ) VALUES ('$nombre', '$precio', '$precio', '$color')";
 
 if($_POST){
     echo "<script lenguage='JavaScript'>
     alert(''Los datos son correctos);
     ";
-    header("Location: mp.php"); // Redirigir a la página de inicio después de iniciar sesión
+    header("Location: consultap.php"); // Redirigir a la página de inicio después de iniciar sesión
 }else{
     echo "<script lenguage='JavaScript'>
     alert(''Los datos son incorrectos);
