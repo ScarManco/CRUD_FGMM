@@ -29,8 +29,8 @@
       die("Error de conexión: " . mysqli_connect_error());
     }
 
-    if (isset($_REQUEST['id_producto'])) {
-      $recuperada = $_REQUEST['id_producto'];
+    if (isset($_REQUEST['id_nombre'])) {
+      $recuperada = $_REQUEST['id_nombre'];
 
 
       // Verificar si se envió el formulario de edición
@@ -41,7 +41,7 @@
         $telefono = $_POST['telefono'];
 
         // Actualizar la información en la base de datos
-        $sql = "UPDATE sucursal SET nombre='$nombre', direccion='$direccion', horario='$horario', telefono='$telefono' WHERE id_producto=$recuperada";
+        $sql = "UPDATE sucursal SET nombre='$nombre', direccion='$direccion', horario='$horario', telefono='$telefono' WHERE id_nombre=$recuperada";
         // Redireccionamiento a la pagina de consulta, justo debajo de la accion de actulizar la base de datos
         if($recuperada){
           echo "<script lenguage='JavaScript'>
@@ -67,7 +67,7 @@
 
     
       // Obtener la información de la sucursal seleccionada
-      $sql = "SELECT id_producto, nombre, direccion, horario, telefono FROM sucursal WHERE id_producto=$recuperada";
+      $sql = "SELECT id_nombre, nombre, direccion, horario, telefono FROM sucursal WHERE id_nombre=$recuperada";
       $result = mysqli_query($conn, $sql);
       $sucursal = mysqli_fetch_assoc($result);
     }
@@ -83,7 +83,7 @@
         </tr>
         <?php if (isset($sucursal)): ?>
           <tr>
-            <td><?php echo $sucursal["id_producto"]; ?></td>
+            <td><?php echo $sucursal["id_nombre"]; ?></td>
             <td><input type="text" name="nombre" value="<?php echo $sucursal["nombre"]; ?>"></td>
             <td><input type="text" name="direccion" value="<?php echo $sucursal["direccion"]; ?>"></td>
             <td><input type="text" name="horario" value="<?php echo $sucursal["horario"]; ?>"></td>
