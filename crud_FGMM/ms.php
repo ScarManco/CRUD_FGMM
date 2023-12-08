@@ -14,10 +14,10 @@
         <span></span>
       </label>
     </div>
-    <input type="checkbox" id_sucursal="btn_label">
+    <input type="checkbox" id_producto="btn_label">
     <ul class="menu">
       <li>
-        <a href="#">Consulta frutas<i class="bx bx-home-alt"></i></a>
+        <a href="#">Consulta sucursal<i class="bx bx-home-alt"></i></a>
       </li>
       <li>
         <a href="#">Inicio<i class="bx bx-home-alt"></i></a>
@@ -41,24 +41,25 @@
       die("Error de conexión: " . mysqli_connect_error());
     }
 
-    if (isset($_REQUEST['id_sucursal'])) {
-      $recuperada = $_REQUEST['id_sucursal'];
+    if (isset($_REQUEST['id_producto'])) {
+      $recuperada = $_REQUEST['id_producto'];
 
 
       // Verificar si se envió el formulario de edición
       if (isset($_POST['guardar'])) {
         $nombre = $_POST['nombre'];
-        $tipo = $_POST['tipo'];
-        $sabor = $_POST['sabor'];
+        $direccion = $_POST['direccion'];
+        $horario = $_POST['horario'];
+        $telefono = $_POST['telefono'];
 
         // Actualizar la información en la base de datos
-        $sql = "UPDATE frutas SET nombre='$nombre', tipo='$tipo', sabor='$sabor' WHERE id_sucursal=$recuperada";
+        $sql = "UPDATE sucursal SET nombre='$nombre', direccion='$direccion', horario='$horario', telefono='$telefono' WHERE id_producto=$recuperada";
         // Redireccionamiento a la pagina de consulta, justo debajo de la accion de actulizar la base de datos
         if($recuperada){
           echo "<script lenguage='JavaScript'>
           alert(''Los datos son correctos);
           ";
-          header("Location: fconsultas14.php"); // Redirigir a la página de inicio después de iniciar sesión
+          header("Location: consultas.php"); // Redirigir a la página de inicio después de iniciar sesión
       }else{
           echo "<script lenguage='JavaScript'>
           alert(''Los datos son incorrectos);
@@ -77,10 +78,10 @@
 
 
     
-      // Obtener la información de la frutas seleccionada
-      $sql = "SELECT id_sucursal, nombre, tipo, sabor FROM frutas WHERE id_sucursal=$recuperada";
+      // Obtener la información de la sucursal seleccionada
+      $sql = "SELECT id_producto, nombre, direccion, horario FROM sucursal WHERE id_producto=$recuperada";
       $result = mysqli_query($conn, $sql);
-      $frutas = mysqli_fetch_assoc($result);
+      $sucursal = mysqli_fetch_assoc($result);
     }
     ?>
     <form method="post">
@@ -91,12 +92,13 @@
           <th>Tipo</th>
           <th>Sabor</th>
         </tr>
-        <?php if (isset($frutas)): ?>
+        <?php if (isset($sucursal)): ?>
           <tr>
-            <td><?php echo $frutas["id_sucursal"]; ?></td>
-            <td><input type="text" name="nombre" value="<?php echo $frutas["nombre"]; ?>"></td>
-            <td><input type="text" name="tipo" value="<?php echo $frutas["tipo"]; ?>"></td>
-            <td><input type="text" name="sabor" value="<?php echo $frutas["sabor"]; ?>"></td>
+            <td><?php echo $sucursal["id_producto"]; ?></td>
+            <td><input type="text" name="nombre" value="<?php echo $sucursal["nombre"]; ?>"></td>
+            <td><input type="text" name="direccion" value="<?php echo $sucursal["direccion"]; ?>"></td>
+            <td><input type="text" name="horario" value="<?php echo $sucursal["horario"]; ?>"></td>
+            <td><input type="text" name="telefono" value="<?php echo $sucursal["telefono"]; ?>"></td>
           </tr>
         <?php endif; ?>
       </table>
