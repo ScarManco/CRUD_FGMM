@@ -46,6 +46,7 @@ if (mysqli_num_rows($result) > 0) {
   <table border="1">
 <tr>
 <th>Id</th>
+<th>nombre</th>
 <th>direccion</th>
 <th>horario</th>
 <th>telefono</th>
@@ -82,7 +83,7 @@ if (mysqli_num_rows($result) > 0) {
 
   while($row = mysqli_fetch_assoc($result)) {
     echo"<tr>";
-    echo"<td>". $row["id_nombre"]."</td>". "<td>" . $row["direccion"]."</td>"."<td>". $row["horario"]."</td>"."<td>" . $row["telefono"];
+    echo"<td>". $row["id_nombre"]."</td>"."<td>" . $row["nombre"]."</td>"."<td>" . $row["direccion"]."</td>"."<td>". $row["horario"]."</td>"."<td>" . $row["telefono"];
     echo"<td>"."<p> <a href='http://localhost/crud_FGMM/consultas.php?id_nombre=".$row['id_nombre']."'>
     <img src='basura.png' alt='W3Schools.com' widt='38' height='38'>
     </a></p>";
