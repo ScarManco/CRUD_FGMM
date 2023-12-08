@@ -14,17 +14,6 @@
         <span></span>
       </label>
     </div>
-    <input type="checkbox" id_bodega="btn_label">
-    <ul class="menu">
-      <li>
-        <a href="#">Consulta bodegas<i class="bx bx-home-alt"></i></a>
-      </li>
-      <li>
-        <a href="#">Inicio<i class="bx bx-home-alt"></i></a>
-      </li>
-      <!-- Agregar más opciones de menú si es necesario -->
-    </ul>
-  </div>
 
   <div class="table-container">
     <?php
@@ -79,7 +68,7 @@
 
     
       // Obtener la información de la bodegas seleccionada
-      $sql = "SELECT id_bodega, nombre, direccion, telefono FROM bodegas WHERE id_bodega=$recuperada";
+      $sql = "SELECT id_bodega, nombre, direccion, telefono, encargado FROM bodegas WHERE id_bodega=$recuperada";
       $result = mysqli_query($conn, $sql);
       $bodegas = mysqli_fetch_assoc($result);
     }
@@ -89,8 +78,9 @@
         <tr>
           <th>Id</th>
           <th>Nombre</th>
-          <th>Tipo</th>
-          <th>Sabor</th>
+          <th>direccion</th>
+          <th>Telefono</th>
+          <th>Encargado</th>
         </tr>
         <?php if (isset($bodegas)): ?>
           <tr>
