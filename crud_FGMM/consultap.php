@@ -26,9 +26,7 @@ if (mysqli_num_rows($result) > 0) {
     <div class="container">
       <nav>
         <ul>
-          <li>Inicio</li>
-          <li>Altas</li>
-          <li>Bajas</li>
+          <li>Crud Fernando Gael Mendoza Montes</li>
         </ul>
       </nav>
     </div>
