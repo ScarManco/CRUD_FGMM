@@ -14,18 +14,6 @@
         <span></span>
       </label>
     </div>
-    <input type="checkbox" id_cliente="btn_label">
-    <ul class="menu">
-      <li>
-        <a href="#">Consulta clientes<i class="bx bx-home-alt"></i></a>
-      </li>
-      <li>
-        <a href="#">Inicio<i class="bx bx-home-alt"></i></a>
-      </li>
-      <!-- Agregar más opciones de menú si es necesario -->
-    </ul>
-  </div>
-
   <div class="table-container">
     <?php
     $servername = "localhost";
@@ -88,8 +76,8 @@
         <tr>
           <th>Id</th>
           <th>Nombre</th>
-          <th>Tipo</th>
-          <th>Sabor</th>
+          <th>Telefono/th>
+          <th>Direccion</th>
         </tr>
         <?php if (isset($clientes)): ?>
           <tr>
